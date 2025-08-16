@@ -1,0 +1,16 @@
+.topmenu {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px;
+  background: var(--c-surface-1);
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-text-1);
+  user-select: none;
+}
+.topmenu .app-title { font-weight: 600; color: var(--c-accent); margin-right: 8px; }
+.topmenu .menu-item { padding: 4px 6px; border-radius: 4px; }
+.topmenu .menu-item:hover { background: var(--c-surface-2); }
+.topmenu .spacer { flex: 1; }
+.topmenu .workspace-indicator { opacity: 0.8; font-size: 12px; }
