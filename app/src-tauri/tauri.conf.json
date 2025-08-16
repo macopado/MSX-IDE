@@ -21,6 +21,7 @@
       }
     ],
     "bundle": {
+      "identifier": "com.macopado.msxide",
       "icon": [
         "icons/icon.png"
       ]
