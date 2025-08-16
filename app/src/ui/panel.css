@@ -1,0 +1,60 @@
+:root {
+  --panel-bg: #2b2b2b;
+  --panel-header-bg: #2f2f2f;
+  --panel-border: #3a3a3a;
+  --panel-title: #e6e6e6;
+  --icon: #c8c8c8;
+  --icon-hover: #ffffff;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  padding: 0 8px;
+  background: var(--panel-header-bg);
+  color: var(--panel-title);
+  user-select: none;
+  cursor: move;
+}
+
+.panel-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--icon);
+  cursor: pointer;
+}
+.icon-btn:hover { color: var(--icon-hover); background: rgba(255,255,255,0.06); }
+
+.panel-body {
+  flex: 1;
+  overflow: auto;
+}

@@ -1,27 +1,36 @@
 import React from 'react';
-import DockLayout from '@ui/DockLayout';
+import { DockLayout, PanelConfig } from '@ui/DockLayout';
 import SceneView from '@components/SceneView';
 import HierarchyPanel from '@hierarchy/HierarchyPanel';
 import InspectorView from '@inspector/InspectorView';
 import ProjectPanel from '@project/ProjectPanel';
 import GameView from '@game/GameView';
 import { useStore } from '@state/store';
-import 'react-mosaic-component/react-mosaic-component.css';
 
 export default function App() {
   const status = useStore(s => s.playbackStatus);
+  
+  const panels: PanelConfig[] = [
+    { id: 'hierarchy', title: 'Hierarchy', render: () => <HierarchyPanel /> },
+    { id: 'project', title: 'Project', render: () => <ProjectPanel /> },
+    { id: 'inspector', title: 'Inspector', render: () => <InspectorView /> },
+    { id: 'scene', title: 'Scene', render: () => <SceneView /> },
+    { id: 'game', title: 'Game', render: () => <GameView /> },
+  ];
+
   return (
     <div className="app-root">
       <TopBar status={status} />
-      <DockLayout
-        tiles={{
-          Scene: <SceneView />,
-          Hierarchy: <HierarchyPanel />,
-          Inspector: <InspectorView />,
-          Project: <ProjectPanel />,
-          Game: <GameView />
-        }}
-      />
+      <div style={{ flex: 1, padding: 8, boxSizing: 'border-box' }}>
+        <DockLayout
+          panels={panels}
+          initialOrder={['hierarchy', 'scene', 'inspector', 'project', 'game']}
+          onClosePanel={(id) => {
+            // TODO: optional: hide panel / update global layout state
+            console.log('close', id);
+          }}
+        />
+      </div>
     </div>
   );
 }
