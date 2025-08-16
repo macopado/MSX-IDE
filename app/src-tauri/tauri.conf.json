@@ -20,6 +20,11 @@
         "decorations": true
       }
     ],
+    "bundle": {
+      "icon": [
+        "icons/icon.png"
+      ]
+    },
     "allowlist": {
       "dialog": { "all": true },
       "fs": { "all": true },

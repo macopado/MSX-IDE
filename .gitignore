@@ -19,4 +19,4 @@ app/src-tauri/gen
 # Logs
 app/npm-debug.log*
 app/yarn-debug.log*
-app/yarn-error.log*
+app/yarn-error.log*.DS_Store
