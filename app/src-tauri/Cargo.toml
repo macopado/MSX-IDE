@@ -1,0 +1,20 @@
+[package]
+name = "msx-ide"
+version = "0.1.0"
+description = "MSX-IDE Desktop"
+authors = ["macopado"]
+edition = "2021"
+rust-version = "1.75"
+
+[build-dependencies]
+tauri-build = { version = "1", features = [] }
+
+[dependencies]
+tauri = { version = "1", features = ["dialog-all", "fs-all", "path-all", "shell-open"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+base64 = "0.22"
+
+# ZIP manejo (se integrará en commits siguientes)
+zip = { version = "0.6", default-features = false, features = ["deflate"] }

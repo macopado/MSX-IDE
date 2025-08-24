@@ -1,0 +1,36 @@
+{
+  "build": {
+    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "pnpm dev",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "MSX-IDE",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "windows": [
+      {
+        "title": "MSX-IDE",
+        "fullscreen": false,
+        "resizable": true,
+        "width": 1400,
+        "height": 900,
+        "decorations": true
+      }
+    ],
+    "bundle": {
+      "identifier": "com.macopado.msxide",
+      "icon": [
+        "icons/icon.png"
+      ]
+    },
+    "allowlist": {
+      "dialog": { "all": true },
+      "fs": { "all": true },
+      "path": { "all": true },
+      "shell": { "open": true }
+    }
+  }
+}
